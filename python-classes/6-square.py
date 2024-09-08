@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""This module defines a square with a private size and position attributes, 
+"""This module defines a square with a private size and position attributes,
 area calculation, and printing functionality."""
 
 
@@ -21,8 +21,8 @@ class Square:
             Defaults to (0, 0).
 
         Raises:
-            TypeError: If size is not an integer or if position is not a tuple of
-            two positive integers.
+            TypeError: If size is not an integer or if position
+            is not a tuple of two positive integers.
             ValueError: If size is less than 0.
         """
         self.size = size
@@ -101,4 +101,3 @@ class Square:
                 print()
             for _ in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
-    
