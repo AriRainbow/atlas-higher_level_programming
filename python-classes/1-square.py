@@ -9,11 +9,11 @@ class Square:
     A class that defines a square by its size.
     """
 
-def __init__(self, size):
-    """
-    Initializes the Square instance with a private size attribute.
-    Args:
-        size: The size of the square.
-    """
-    self.__size = size  # Private instance attribute
-    
+    def __init__(self, size):
+        """
+        Initializes the Square instance with a private size attribute.
+        Args:
+            size: The size of the square.
+        """
+        self.__size = size  # Private instance attribute
+
