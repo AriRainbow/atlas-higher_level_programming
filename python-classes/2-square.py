@@ -2,6 +2,7 @@
 
 """This module defines a square with size and area calculation."""
 
+
 class Square:
     """Represents a square.
 
@@ -56,3 +57,4 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
+    
