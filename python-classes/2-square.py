@@ -33,7 +33,7 @@ class Square:
             int: The size of the square.
         """
         return self.__size
-    
+
     def set_size(self, size):
         """Sets the size of the square.
 
@@ -57,4 +57,3 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
-    
