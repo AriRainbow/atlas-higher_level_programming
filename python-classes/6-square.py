@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-"""This module defines a square with a private size and position attributes, area
-calculation, and printing functionality."""
+"""This module defines a square with a private size and position attributes, 
+area calculation, and printing functionality."""
 
 
 class Square:
@@ -17,10 +17,12 @@ class Square:
 
         Args:
             size (int): The size of the square. Defaults to 0.
-            position (tuple): The position of the square in 2D space. Defaults to (0, 0).
+            position (tuple): The position of the square in 2D space.
+            Defaults to (0, 0).
 
         Raises:
-            TypeError: If size is not an integer or if position is not a tuple of two positive integers.
+            TypeError: If size is not an integer or if position is not a tuple of
+            two positive integers.
             ValueError: If size is less than 0.
         """
         self.size = size
@@ -34,7 +36,7 @@ class Square:
             int: the size of the square.
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Sets the size of the square.
@@ -60,7 +62,7 @@ class Square:
             tuple: The position of the square.
         """
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         """Sets the position of the square.
@@ -73,8 +75,8 @@ class Square:
         """
         if (not isinstance(value, tuple) or
             len(value) != 2 or
-            not all(isinstance(i, int) for i in value) or
-            not all(i >= 0 for i in value)):
+                not all(isinstance(i, int) for i in value) or
+                not all(i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -85,7 +87,7 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
-    
+
     def my_print(self):
         """Prints the squre with the '#' character.
 
@@ -99,4 +101,4 @@ class Square:
                 print()
             for _ in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
-        
+    
