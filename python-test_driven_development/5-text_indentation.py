@@ -7,7 +7,8 @@ each of these characters: '.', '?', and ':'.
 
 def text_indentation(text):
     """
-    Prints text with 2 new lines after each of these characters: '.', '?', and ':'.
+    Prints text with 2 new lines after each of
+    these characters: '.', '?', and ':'.
 
     Args:
         text (str): The text to print.
@@ -17,7 +18,7 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     result = ""
     i = 0
 
@@ -32,5 +33,5 @@ def text_indentation(text):
             continue
         i += 1
 
-    #Print the result without any leading/trailing spaces
+    # Print the result without any leading/trailing spaces
     print(result.strip(), end="")
