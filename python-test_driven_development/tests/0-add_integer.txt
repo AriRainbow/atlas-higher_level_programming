@@ -43,7 +43,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 
 # Float overflow handling
->>> add_integer(1e+300, 1e+300)
+>>> add_integer(float('inf'), float('inf'))
 Traceback (most recent call last):
     ...
 OverflowError: cannot convert float infinity to integer
