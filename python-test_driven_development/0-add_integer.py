@@ -3,6 +3,7 @@
 This module contains the finction add_integer.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two integers or floats (after casting to integers).
@@ -21,7 +22,7 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    
+
     # cast floats to integers
     a = int(a)
     b = int(b)
