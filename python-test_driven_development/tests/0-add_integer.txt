@@ -1,1 +1,59 @@
-set up testing
+Add Integer Function Tests
+==========================
+
+>>> from add_integer import add_integer
+
+# Regular addition with two integers
+>>> add_integer(10, 5)
+15
+
+# Regular addition with one integer (b defaults to 98)
+>>> add_integer(10)
+108
+
+# Test for integer casting (floats casted to integers)
+>>> add_integer(3.9, 2.1)
+5
+
+>>> add_integer(1.5, 98)
+99
+
+# Test for type checking (non-integer and non-float input for a)
+>>> add_integer("hello", 2)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test for type checking (non-integer and non-float input for b)
+>>> add_integer(2, "world")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test for missing one argument
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# Test for missing two arguments
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Float overflow handling
+>>> add_integer(1e+300, 1e+300)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+# Cannot convert NaN to integer
+>>> add_integer(float('nan'), 5)
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
+
+# Test with negative integers
+>>> add_integer(-10, -20)
+-30
