@@ -1,1 +1,37 @@
->>>
+Say My Name Function Tests
+==========================
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Regular cases with both first and last names
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Ari", "Murphy")
+My name is Ari Murphy
+
+# Case with only first name
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test for type checking (non-string first name)
+>>> say_my_name(12, "Smith")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test for type checking (non-string last name)
+>>> say_my_name("Bob", 34)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+# Test for both arguments being non-strings
+>>> say_my_name(12, 34)
+Traceback (most recent call last):
+    ...
+TypeError: first_name and last_name must be a string
+
+# Test for empty strings
+>>> say_my_name("", "")
+My name is
