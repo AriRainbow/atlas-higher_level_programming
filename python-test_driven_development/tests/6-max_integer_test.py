@@ -40,9 +40,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2.2, 3, 4.4]), 4.4)
 
     def test_strings(self):
-        """Test list with strings (which should raise an error)."""
-        with self.assertRaises(TypeError):
-            max_integer(['a', 'b', 'c'])
+        """Test list with strings (should return the max string)."""
+        self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
 
 if __name__ == "__main__":
     unittest.main()
