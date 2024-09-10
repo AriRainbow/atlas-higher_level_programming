@@ -39,7 +39,7 @@ Matrix Divided Function Test
 >>> matrix_divided([1, 2, 3], 2)
 Traceback (most recent call last):
     ...
-TypeError: matrix must be a matrix (list of lists) if integers/floats
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 # Test with invalid row size
 >>> matrix = [
