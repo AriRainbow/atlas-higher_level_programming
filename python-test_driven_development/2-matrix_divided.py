@@ -17,14 +17,14 @@ def matrix_divided(matrix, div):
         list of lists: A new matrix with the elements divided by div.
 
     Raises:
-        TypeError: If the matrix is nota list of lists of integers/floats.
+        TypeError: If the matrix is not a list of lists of integers/floats.
         TypeError: If the rows of the matrix are not the same size.
-        TypeError: If div is not a number (integeror float).
+        TypeError: If div is not a number (integer or float).
         ZeroDivisionError: If div is zero.
     """
     # Validate matrix
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/f;oats")
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if not all(isinstance(ele, (int, float)) for row in matrix for ele in row):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     
