@@ -43,5 +43,8 @@ class TestMaxInteger(unittest.TestCase):
         """Test list with strings (should return the max string)."""
         self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
 
+    def test_max_in_middle(self):
+        self.assertEqual(max_integer([1, 3, 7, 2, 5]), 7)
+
 if __name__ == "__main__":
     unittest.main()
