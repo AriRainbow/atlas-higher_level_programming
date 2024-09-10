@@ -1,1 +1,52 @@
->>>
+Print Square Function Tests
+===========================
+
+>>> print_square = __import__('4-print_square').print_square
+
+# Regular cases
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+
+
+>>> print_square(1)
+#
+
+# Test for type checking (non-integer size)
+>>> print_square(1.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+>>> print_square("string")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+# Test for negative size
+>>> print_square(-1)
+Traceback (most recent call last)
+    ...
+ValueError: size must be >= 0
+
+Test for negative float size
+>>> print_square(-1.5)
+Traceback (most recent call last)
+    ...
+TypeError: size must be an integer
