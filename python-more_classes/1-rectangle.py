@@ -6,16 +6,36 @@ along with propert setters and getters for validation.
 
 
 class Rectangle:
+    """A class used to represent a rectangle.
+    
+    Attributes:
+    ----------
+    width : int
+        The width of the rectangle (default is 0).
+    height : int
+        The height of the rectangle (default is 0).
+    """
+
+
     def __init__(self, width=0, height=0):
+        """
+        Initializes the Rectangle with optional width and height.
+        
+        Args:
+        width (int): The width of the rectangle (default is 0).
+        height (int): The height of the rectangle (default is 0).
+        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """Getter for width attribute."""
         return self.__width
     
     @width.setter
     def width(self, value):
+        """Setter for the width attribute. Ensures it's an integer and >= 0."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -24,10 +44,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """Getter for the height attribute."""
         return self.__height
     
     @height.setter
     def height(self, value):
+        """Setter for the height attribute. Ensures it's an integer and >= 0."""
         if not isinstance(value, int):
             raise TypeError("height mus tbe an integer")
         if value < 0:
