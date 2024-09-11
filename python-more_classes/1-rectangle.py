@@ -7,7 +7,7 @@ along with propert setters and getters for validation.
 
 class Rectangle:
     """A class used to represent a rectangle.
- 
+
     Attributes:
     ----------
     width : int
@@ -19,7 +19,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes the Rectangle with optional width and height.
-    
+
         Args:
         width (int): The width of the rectangle (default is 0).
         height (int): The height of the rectangle (default is 0).
@@ -48,7 +48,8 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Setter for the height attribute. Ensures it's an integer and >= 0."""
+        """Setter for the height attribute.
+        Ensures it's an integer and >= 0."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
