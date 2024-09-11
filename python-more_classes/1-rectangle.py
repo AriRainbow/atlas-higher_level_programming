@@ -25,8 +25,8 @@ class Rectangle:
         width (int): The width of the rectangle (default is 0).
         height (int): The height of the rectangle (default is 0).
         """
-        self.width = width
-        self.height = height
+        self.width = width  # This will call the setter
+        self.height = height  # This will call the setter
 
     @property
     def width(self):
@@ -40,7 +40,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.width = value
+        self.__width = value
 
     @property
     def height(self):
