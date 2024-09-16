@@ -1,12 +1,8 @@
 #!/usr/bin/python3
+"""
+This module defines a finction lookup which
+returns the list of available attributes and methodsof an object.
+"""
 def lookup(obj):
-    """
-    Returns a list of available attributes and methods of an object.
-    
-    Parameters:
-    obj (object): The object whose attributes and methods are to be listed.
-    
-    Returns:
-    list: A list of attributes and methods of the object.
-    """
+    """Returns the list of available attributes and methods of an object."""
     return dir(obj)
