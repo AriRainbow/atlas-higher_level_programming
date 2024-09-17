@@ -17,7 +17,7 @@ Methods:
     area(self): Returns the area of the rectangle.
     __str__(self): Returns a string representation of the rectangle.
 """
-BaseGeometry = __import__('7-base_geometry').BaseGemetry
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
