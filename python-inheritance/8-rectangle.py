@@ -15,7 +15,7 @@ Methods:
                                     width and height, validated for positive integers.
 """
 
-BaseGeometry = __import__('7-_base_geometry').BaseGeometry
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """
