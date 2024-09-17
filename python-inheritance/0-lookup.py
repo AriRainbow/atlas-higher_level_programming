@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a finction lookup which
+This module defines a function lookup which
 returns the list of available attributes and methodsof an object.
 """
 
