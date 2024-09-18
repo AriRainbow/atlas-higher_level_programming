@@ -34,7 +34,7 @@ class Student:
 
         Args:
             attrs (list, optional): A list of attribute names to include in the dictionary.
-        
+     
         Returns:
             dict: The dictionary representation of the student.
         """
@@ -44,11 +44,10 @@ class Student:
                 'last_name': self.last_name,
                 'age': self.age
             }
-        
+     
         # Ensure attrs is a list of strings and contains valid attributes
         if not isinstance(attrs, list) or not all(isinstance(attr, str) for attr in attrs):
             return {}
-        
+  
         # Construct the dictionary based on attrs
         return {key: getattr(self, key) for key in attrs if hasattr(self, key)}
-    
