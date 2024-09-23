@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-Rectangle class that inherits from Base.
+This module defines the Rectangle class, which inherits from Base.
+
+This module provides a Rectangle class with attributes for width, height,
+x and y coordinates, along with their respective getters and setters.
 """
 
 Base = __import__('models.base').Base
