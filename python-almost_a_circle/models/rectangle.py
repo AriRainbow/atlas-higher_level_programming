@@ -3,6 +3,8 @@
 Rectangle class that inherits from Base.
 """
 
+Base = __import__('models.base').Base
+
 
 class Rectangle(Base):
     """Represents a rectangle that inherits from Base."""
@@ -17,7 +19,6 @@ class Rectangle(Base):
             y (int): The y-coordinte of the rectangle's position.
             id (int): The id of the rectangle instance.
         """
-        Base = __import__('models.base').Base
         super().__init__(id)
         self.__width = width
         self.__height = height
