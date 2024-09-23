@@ -105,7 +105,7 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Update the rectangle attributes based on the given arguments.
-        
+
         Args:
             *args: New attribute values in the following order:
                 1st: id
