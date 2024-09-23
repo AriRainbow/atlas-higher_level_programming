@@ -12,7 +12,7 @@ class Rectangle:
         
         Args:
             width (int): The width of the rectangle.
-            heigth (int): The height of the rectangle.
+            height (int): The height of the rectangle.
             x (int): The x-coordinate of the rectangle's position.
             y (int): The y-coordinte of the rectangle's position.
             id (int): The id of the rectangle instance.
@@ -42,7 +42,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """Set the height of the rectangle."""
-        self.height = value
+        self.__height = value
 
     @property
     def x(self):
