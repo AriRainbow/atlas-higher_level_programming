@@ -6,7 +6,7 @@ This module provides a Rectangle class with attributes for width, height,
 x and y coordinates, along with their respective getters and setters.
 """
 
-Base = __import__('models.base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
