@@ -19,7 +19,7 @@ class Rectangle(Base):
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
             x (int): The x-coordinate of the rectangle's position.
-            y (int): The y-coordinte of the rectangle's position.
+            y (int): The y-coordinate of the rectangle's position.
             id (int): The id of the rectangle instance.
         """
         super().__init__(id)
@@ -36,8 +36,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Set the width of the rectangle with validation."""
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+        self.validate_integer(value, "width")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
@@ -51,8 +50,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Set the height of the rectanglen with validation."""
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+        self.validate_integer(value, "height")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
@@ -65,8 +63,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Set the x-coordinate of the rectangle with validation."""
-        if not isinstance(value, int):
-            raise TypeError("x must be an integer")
+        self.validate_integer(value, "x")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
@@ -79,11 +76,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Set the y-coordinate of the rectangle with validation."""
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
+        self.validate_integer(value, "y")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def validate_integer(self, value, name):
+        """Validate that value is an integer."""
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
 
     def area(self):
         """Calculates the area of the rectangle.
@@ -103,25 +104,19 @@ class Rectangle(Base):
         """Return a string representation of the Rectangle."""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the rectangle attributes based on the given arguments.
 
         Args:
-            *args: New attribute values in the following order:
-                1st: id
-                2nd: width
-                3rd: height
-                4th: x
-                5th: y
+            *args: Non-keyworded arguments to update attributes.
+            **kwargs: Keyworded arguments to update attributes.
         """
         if args:
-            if len(args) > 0:
-                self.id = args[0]  # Update id
-            if len(args) > 1:
-                self.width = args[1]  # Update width
-            if len(args) > 2:
-                self.height = args[2]  # Update height
-            if len(args) > 3:
-                self.x = args[3]  # Update x
-            if len(args) > 4:
-                self.y = args[4]  # Update y
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i, arg in enumerate(args):
+                if i < len(attrs):
+                    setattr(self, attrs[i], arg)
+
+        for key, value in kwargs.items():
+            if key in ['id', 'width', 'height', 'x', 'y']:
+                setattr(self, key, value)
