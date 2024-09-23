@@ -7,7 +7,7 @@ Base class for managing `id` attribute for inherited classes.
 class Base:
     """Represents the base model for managing the `id` attribute."""
 
-    __nb_objects = 0 # Private class attribute to track the number of objects.
+    __nb_objects = 0  # Private class attribute to track the number of objects.
     
     def __init__(self, id=None):
         """Initialize the Base class.
