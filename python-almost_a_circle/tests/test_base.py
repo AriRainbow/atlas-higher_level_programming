@@ -23,10 +23,14 @@ class TestBase(unittest.TestCase):
         b3 = Base(42)
         self.assertEqual(b3.id, 42)
 
-    def test_base_id_none(self):
-        """Test id assignment when id is None."""
+    def test_base_id_mixed(self):
+        """Test mixed automatic and explicit ID assignment."""
         b4 = Base()
-        self.assertEqual(b4.id, 3)
+        b5 = Base(100)
+        b6 = Base()
+        self.assertEqual(b4.id, 3)  # Auto-incremented
+        self.assertEqual(b5.id, 100)  # Explicit ID
+        self.assertEqual(b6.id, 4)  # Auto-increment
 
 if __name__ == "__main__":
     unittest.main()
