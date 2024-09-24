@@ -123,7 +123,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dictionary representation of the Rectangle.
-        
+
         Returns:
             dict: A dictionary containing id, width, height, x, and y.
         """
