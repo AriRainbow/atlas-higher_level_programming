@@ -67,7 +67,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Return the list represented by the JSON string.
- 
+
         Args:
             json_string (str): A string representing a list of dictionaries.
 
