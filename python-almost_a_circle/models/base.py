@@ -56,7 +56,7 @@ class Base:
                     list_dicts.append(obj.to_dictionary())
                 else:
                     raise AttributeError(f"{obj} does not have a to_dictionary method")
-  
+
         # Convert the list of dictionaries to a JSON string
         json_string = cls.to_json_string(list_dicts)
 
