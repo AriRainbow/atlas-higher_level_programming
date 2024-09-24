@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines the Base class, which will be the "base" for all other classes.
+This module defines the Base class,
+which will be the "base" for all other classes.
 """
 
 import json
@@ -27,7 +28,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON string representation of a list of dictionaries.
-    
+
         Args:
             list_dictionaries (list): A list of dictionaries.
 
