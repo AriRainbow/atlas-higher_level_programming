@@ -81,7 +81,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create an instance with all attributes already set using the dictionary.
- 
+
         Args:
             **dictionary (dict): A dictionary of attributes for the instance.
 
