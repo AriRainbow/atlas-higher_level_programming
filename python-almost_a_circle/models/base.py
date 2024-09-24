@@ -113,6 +113,6 @@ class Base:
                 json_string = file.read()
         except FileNotFoundError:
             return []
- 
+
         list_dicts = cls.from_json_string(json_string)
         return [cls.create(**d) for d in list_dicts]
