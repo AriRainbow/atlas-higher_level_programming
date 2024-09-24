@@ -42,7 +42,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Save the JSON string representation of list_onjs to a file.
-  
+
         Args:
             list_objs (list): A list of instances that inherit from Base (Rectangle or Square).
         """
@@ -56,11 +56,10 @@ class Base:
                     list_dicts.append(obj.to_dictionary())
                 else:
                     raise AttributeError(f"{obj} does not have a to_dictionary method")
-          
+  
         # Convert the list of dictionaries to a JSON string
         json_string = cls.to_json_string(list_dicts)
 
         # Write the JSON string to the file
         with open(filename, "w") as file:
             file.write(json_string)
-       
