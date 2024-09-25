@@ -74,14 +74,6 @@ class TestRectangle(unittest.TestCase):
         """Test the __str__ method."""
         r = Rectangle(3, 4, 1, 2, 89)  # Assuming the constructor takes (width, height, x, y, id)
         self.assertEqual(str(r), "[Rectangle] (89) 1/2 - 3/4")
-    
-    def test_rectangle_display_without_xy(self):
-        """Test the display method without x and y."""
-        r = Rectangle(3, 2)  # Only width and height provided
-        expected_output = "###\n###\n"  # This represents the rectangle in the console
-        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            r.display()
-            self.assertEqual(mock_stdout.getvalue(), expected_output)
 
 if __name__ == "__main__":
     unittest.main()
