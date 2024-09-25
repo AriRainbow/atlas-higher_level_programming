@@ -4,6 +4,7 @@ Unit tests for the Base class.
 """
 
 import unittest
+from unittest.mock import patch
 
 Base = __import__('models.base', fromlist=['Base']).Base
 
@@ -11,8 +12,10 @@ Base = __import__('models.base', fromlist=['Base']).Base
 class TestBase(unittest.TestCase):
     """Test cases for the Base class."""
 
+    @patch.object(Base, '_nb_objects', new_callable=int, return_value=0)
     def test_base_id_auto_increment(self):
         """Test automatic id assignment."""
+        Base._nb_objects = 0  # Reset before test
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, 1)
