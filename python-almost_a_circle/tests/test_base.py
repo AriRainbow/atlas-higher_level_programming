@@ -13,11 +13,11 @@ class TestBase(unittest.TestCase):
 
     def setUp(self):
         """Reset __nb_objects to 0 before each test to avoid conflicts."""
-        Base._Base__nb_objects = 0
+        Base._Base_nb_objects = 0
 
     def tearDown(self):
         """Reset __nb_objects after each test to ensure isolation."""
-        Base._Base__nb_objects = 0
+        Base._Base_nb_objects = 0
 
     def test_base_id_auto_increment(self):
         """Test automatic id assignment."""

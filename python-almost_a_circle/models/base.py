@@ -10,7 +10,7 @@ import json
 class Base:
     """Represents the base model for all classes in this project."""
 
-    __nb_objects = 0  # Private class attribute to track the number of objects.
+    _nb_objects = 0  # Private class attribute to track the number of objects.
 
     def __init__(self, id=None):
         """Initialize the Base class.
@@ -22,8 +22,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            Base._nb_objects += 1
+            self.id = Base._nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
