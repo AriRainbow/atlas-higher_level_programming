@@ -11,12 +11,9 @@ Base = __import__('models.base', fromlist=['Base']).Base
 class TestBase(unittest.TestCase):
     """Test cases for the Base class."""
 
-    def setUp(self):
-        """Reset __nb_objects to 0 before each test to avoid conflicts."""
-        Base._Base__nb_objects = 0
-
     def test_base_id_auto_increment(self):
         """Test automatic id assignment."""
+        Base._Base__nb_objects = 0  # Reset between tests
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, 1)
@@ -24,11 +21,13 @@ class TestBase(unittest.TestCase):
 
     def test_base_id_explicit(self):
         """Test explicit id assignment."""
+        Base._Base__nb_objects = 0  # Reset between tests
         b3 = Base(42)
         self.assertEqual(b3.id, 42)
 
     def test_base_id_mixed(self):
         """Test mixed automatic and explicit ID assignment."""
+        Base._Base__nb_objects = 0  # Reset between tests
         b4 = Base()
         b5 = Base(100)
         b6 = Base()
