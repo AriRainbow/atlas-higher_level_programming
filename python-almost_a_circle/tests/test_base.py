@@ -31,9 +31,19 @@ class TestBase(unittest.TestCase):
         b4 = Base()
         b5 = Base(100)
         b6 = Base()
-        self.assertEqual(b4.id, 3)  # Auto-incremented
+        self.assertEqual(b4.id, 1)  # Auto-incremented
         self.assertEqual(b5.id, 100)  # Explicit ID
-        self.assertEqual(b6.id, 4)  # Auto-increment
+        self.assertEqual(b6.id, 2)  # Auto-increment
+
+    def test_base_id_auto_increment_continues(self):
+        """Test that auto-increment continues correctly after explicit ID assignment."""
+        Base._Base__nb_objects = 0  # Reset between tests
+        b7 = Base()
+        b8 = Base(500)
+        b9 = Base()
+        self.assertEqual(b7.id, 1)  # Auto
+        self.assertEqual(b8.id, 500)  # Explicit
+        self.assertEqual(b9.id, 2)  # Auto continues from previous auto
 
 if __name__ == "__main__":
     unittest.main()
