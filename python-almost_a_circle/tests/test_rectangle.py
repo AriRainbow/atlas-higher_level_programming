@@ -45,5 +45,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(1, -2)
 
+    def test_rectangle_creation_with_zero_width(self):
+        """Test instantiation with a width of zero."""
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
 if __name__ == "__main__":
     unittest.main()
