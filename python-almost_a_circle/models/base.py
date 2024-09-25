@@ -25,11 +25,6 @@ class Base:
             Base._nb_objects += 1
             self.id = Base._nb_objects
 
-    @classmethod
-    def reset_nb_objects(cls):
-        """Reset the class attribute _nb_objects to 0."""
-        cls._nb_objects = 0
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON string representation of a list of dictionaries.
