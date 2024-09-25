@@ -75,5 +75,17 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(3, 4, 1, 2, 89)  # Assuming the constructor takes (width, height, x, y, id)
         self.assertEqual(str(r), "[Rectangle] (89) 1/2 - 3/4")
 
+    def test_rectangle_to_dictionary(self):
+        """Test the to_dictionary method."""
+        r = Rectangle(1, 2, 3, 4, 89)  # width=1, height=2, x=3, y=4, id=89
+        expected_dict = {
+            'id': 89,
+            'width': 1,
+            'height': 2,
+            'x': 3,
+            y': 4
+    }
+        self.assertEqual(r.to_dictionary(), expected_dict)
+
 if __name__ == "__main__":
     unittest.main()
