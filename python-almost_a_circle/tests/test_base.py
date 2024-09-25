@@ -13,7 +13,7 @@ class TestBase(unittest.TestCase):
 
     def setUp(self):
         """Reset __nb_objects to 0 before each test to avoid conflicts."""
-        Base._Base_nb_objects = 0
+        Base.reset_nb_objects()
 
     def tearDown(self):
         """Reset __nb_objects after each test to ensure isolation."""
