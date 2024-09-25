@@ -5,43 +5,49 @@ Unit tests for the Base class.
 
 import unittest
 from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
-
 
 class TestBase(unittest.TestCase):
     """Test cases for the Base class."""
 
-    def test_base_id_auto_increment(self):
-        """Test automatic id assignment."""
-        Base._nb_objects = 0  # Reset before test
+    @classmethod
+    def setUpClass(cls):
+        """Runs once for the entire test class to initialize any class-wide state."""
+        cls._original_nb_objects = Base._Base__nb_objects
+
+    def setUp(self):
+        """Runs before each test to reset the _nb_objects counter."""
+        Base._Base__nb_objects = 0
+
+    def test_auto_id_assignment(self):
+        """Test automatic ID assignment."""
         b1 = Base()
         b2 = Base()
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
 
-    def test_base_id_explicit(self):
-        """Test explicit id assignment."""
-        b3 = Base(42)
-        self.assertEqual(b3.id, 42)
+    def test_explicit_id_assignment(self):
+        """Test explicit ID assignment."""
+        b1 = Base(100)
+        self.assertEqual(b1.id, 100)
 
-    def test_base_id_mixed(self):
+    def test_mixed_id_assignment(self):
         """Test mixed automatic and explicit ID assignment."""
-        b4 = Base()
-        b5 = Base(100)
-        b6 = Base()
-        self.assertEqual(b4.id, 1)  # Auto-incremented
-        self.assertEqual(b5.id, 100)  # Explicit ID
-        self.assertEqual(b6.id, 2)  # Auto-increment
+        b1 = Base()
+        b2 = Base(42)
+        b3 = Base()
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 42)
+        self.assertEqual(b3.id, 2)
 
-    def test_base_id_auto_increment_continues(self):
-        """Test that auto-increment continues correctly after explicit ID assignment."""
-        b7 = Base()
-        b8 = Base(500)
-        b9 = Base()
-        self.assertEqual(b7.id, 1)  # Auto
-        self.assertEqual(b8.id, 500)  # Explicit
-        self.assertEqual(b9.id, 2)  # Auto continues from previous auto
+    def test_reset_nb_objects(self):
+        """Test that the _nb_objects is correctly reset between tests."""
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
+
+    @classmethod
+    def tearDownClass(cls):
+        """Runs once after all tests to clean up any modifications."""
+        Base._Base__nb_objects = cls._original_nb_objects
 
 if __name__ == "__main__":
     unittest.main()
