@@ -30,5 +30,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "3")
 
+    def test_rectangle_creation_with_invalid_y(self):
+        """Test instantiation with an invalid y."""
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
+
 if __name__ == "__main__":
     unittest.main()
