@@ -70,5 +70,10 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(3, 4)
         self.assertEqual(r.area(), 12)  # Area = width * height
 
+    def test_rectangle_str(self):
+        """Test the __str__ method."""
+        r = Rectangle(3, 4, 1, 2, 89)  # Assuming the constructor takes (width, height, x, y, id)
+        self.assertEqual(str(r), "[Rectangle] (89) 1/2 - 3/4")
+
 if __name__ == "__main__":
     unittest.main()
