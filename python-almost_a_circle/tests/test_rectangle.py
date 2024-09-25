@@ -35,5 +35,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, "4")
 
+    def test_rectangle_creation_with_too_many_arguments(self):
+        """Test instantiation with too many arguments."""
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, 4, 5)
+
 if __name__ == "__main__":
     unittest.main()
