@@ -25,5 +25,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, "2")
 
+    def test_rectangle_creation_with_invalid_x(self):
+        """Test instantiation with an invalid x."""
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, "3")
+
 if __name__ == "__main__":
     unittest.main()
