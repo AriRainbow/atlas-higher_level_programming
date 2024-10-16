@@ -26,8 +26,11 @@ if __name__ == "__main__":
     # Create a cursor object
     cursor = db.cursor()
 
-    # Execute the query to select states matching the provided name
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    # Construct the SQL query using format
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+
+    # Execute the query
+    cursor.execute(query)
 
     # Fetch all the results
     results = cursor.fetchall()
@@ -38,4 +41,4 @@ if __name__ == "__main__":
 
     # Close the cursor and database connection
     cursor.close()
-    db.close()
+    db.close() 
