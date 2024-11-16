@@ -7,7 +7,7 @@ const argsLength = process.argv.length - 2; // Exclude the first two elements (n
 if (argsLength === 0) {
     console.log('No argument');
 } else if (argsLength === 1) {
-    console.log('Argument Found');
+    console.log('Argument found');
 } else {
     console.log('Arguments found');
 }
