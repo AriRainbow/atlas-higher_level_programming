@@ -1,4 +1,4 @@
-#!usr/bin/node
+#!/usr/bin/node
 
 // Check the number of arguments passed
 const argsLength = process.argv.length - 2; // Exclude the first two elements (node and script name)
