@@ -16,9 +16,10 @@ class Rectangle {
   // Mod to match the exact expected output
   toString () {
     if (this.width === undefined || this.height === undefined) {
-      return `Rectangle { width: ${this.width}, height: ${this.height} }`;
+      return 'Rectangle {}'; // Matches the exact output required
     }
-    return 'Rectangle { invalid dimentions }'; // Match desired output format
+    // Otherwise, return the string representation of the Rectangle object
+    return `Rectangle { width: ${this.width}, height: ${this.height} }`;
   }
 }
 
