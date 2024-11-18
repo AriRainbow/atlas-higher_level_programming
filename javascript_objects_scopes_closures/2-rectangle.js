@@ -8,9 +8,18 @@ class Rectangle {
       this.width = w; // Set width
       this.height = h; // Set height
     } else {
-      // Create an empty object if conditions are not met
-      return {};
+      // If conditions are not met, create a 'broken' Rectangle instance
+      this.width = undefined;
+      this.height = undefined;
     }
+  }
+
+  // Define a method to return a string representation of the Rectangle
+  toString () {
+    if (this.width && this.height) {
+      return `Rectangle { width: ${this.width}, height: ${this.height} }`;
+    }
+    return 'Rectangle { invalid dimentions }';
   }
 }
 
