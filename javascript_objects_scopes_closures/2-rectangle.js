@@ -12,15 +12,6 @@ class Rectangle {
       return {};
     }
   }
-
-  // Mod to match the exact expected output
-  toString () {
-    if (this.width === undefined || this.height === undefined) {
-      return 'Rectangle {}'; // Matches the exact output required
-    }
-    // Otherwise, return the string representation of the Rectangle object
-    return `Rectangle { width: ${this.width}, height: ${this.height} }`;
-  }
 }
 
 module.exports = Rectangle;
