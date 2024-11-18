@@ -7,10 +7,8 @@ class Rectangle {
     if (w > 0 && h > 0) {
       this.width = w; // Set width
       this.height = h; // Set height
-    } else {
-      // Set to an empty object when deminsions are invalid
-      return {};
-    }
+    } 
+    // if invalid dimentions, don't set width and height
   }
 }
 
