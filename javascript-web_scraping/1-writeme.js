@@ -12,9 +12,7 @@ const content = process.argv[3];
 try {
   // Attempt to write the content to the specified file
   // The 'writeFileSync' method writes the file synchronously in utf-8 encoding by default
-  fs.writeFileSync(filePath, content);
-  // If the write operation succeeds, log a success message
-  console.log('String written to file successfully.');
+  fs.writeFileSync(filePath, content)
 } catch (error) {
   // If an error occurs during the write operation, log the error object 
   console.error(error);
